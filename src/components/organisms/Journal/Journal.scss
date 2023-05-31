@@ -74,9 +74,9 @@
             width: 300px;
             height: 40px;
             background: #336666;
-            -webkit-box-shadow: 10px 10px 5px -4px rgba(27, 25, 42, 0.75);
-            -moz-box-shadow: 10px 10px 5px -4px rgba(27, 25, 42, 0.75);
-            box-shadow: 7px 7px 3px -4px rgba(133, 132, 132, 0.75);
+            // -webkit-box-shadow: 10px 10px 5px -4px rgba(27, 25, 42, 0.75);
+            // -moz-box-shadow: 10px 10px 5px -4px rgba(27, 25, 42, 0.75);
+            // box-shadow: 7px 7px 3px -5px rgba(3, 3, 3, 0.39);
             border: none;
             color: white;
             text-transform: uppercase;
@@ -90,7 +90,7 @@
             &:hover {
                 color: #336666;
                 background: white;
-                border: 1px solid #33666618;
+                border: 1px solid #336666;
             }
         }
 
