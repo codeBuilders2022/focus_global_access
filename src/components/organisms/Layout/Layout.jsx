@@ -5,6 +5,11 @@ import "./Layout.scss"
 import Header from '../Header/Header'
 import Footer from '../../Footer/Footer'
 
+//react
+import theme from 'primereact/resources/themes/lara-light-indigo/theme.css';   // theme
+import 'primereact/resources/primereact.css';                       // core css
+import 'primeicons/primeicons.css';
+
 
 //react
 import { Outlet, Link, useLocation } from 'react-router-dom'
@@ -12,11 +17,11 @@ import { Outlet, Link, useLocation } from 'react-router-dom'
 const Layout = () => {
     return (
         <div className='Layout'>
-            <Header/>
+            <Header />
             <main className='containerMain'>
                 <Outlet />
             </main>
-            <Footer/>
+            <Footer />
         </div>
     )
 }
