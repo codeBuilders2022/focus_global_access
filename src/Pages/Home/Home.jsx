@@ -4,11 +4,12 @@ import "./Home.scss"
 // //assets
 import img1 from "../../assets/images/adn2.jpg"
 import img2 from "../../assets/images/ai.png"
-import img4 from "../../assets/images/micro.jpg"
+import img4 from "../../assets/images/stethoscope.jpg"
 import img5 from "../../assets/images/virus.jpg"
 import img6 from "../../assets/images/ADN.jpg"
-import fisica from "../../assets/images/fisica.jpeg"
-import derecho from "../../assets/images/derecho.jpg"
+import virus from "../../assets/images/virus2.jpg"
+import fisica from "../../assets/images/periodic-table.jpg"
+import derecho from "../../assets/images/graphics.png"
 import educacion from "../../assets/images/educacion.jpg"
 import books from "../../assets/images/books.jpg"
 import img8 from "../../assets/images/bacteria.jpg"
@@ -24,17 +25,7 @@ import cover_2 from "../../assets/images/portadas/2.png"
 import cover_3 from "../../assets/images/portadas/3.png"
 import cover_4 from "../../assets/images/portadas/4.png"
 import cover_5 from "../../assets/images/portadas/5.png"
-import cover_6 from "../../assets/images/portadas/genetica2.jpg"
-import cover_7 from "../../assets/images/portadas/jacsat.jpeg"
-import cover_8 from "../../assets/images/portadas/jyv.jpg"
-import cover_9 from "../../assets/images/portadas/microbiologia.jpg"
-import cover_10 from "../../assets/images/portadas/neurologia.jpeg"
-import cover_11 from "../../assets/images/portadas/microbiologia2.jpg"
-import cover_12 from "../../assets/images/portadas/neurologia2.jpg"
-import cover_13 from "../../assets/images/portadas/neurologia3.jpg"
-import cover_14 from "../../assets/images/portadas/physical.jpg"
-import cover_15 from "../../assets/images/portadas/psicologia2.jpg"
-import cover_16 from "../../assets/images/portadas/psicologia.jpg"
+
 
 //react
 import { Galleria } from "primereact/galleria"
@@ -42,13 +33,15 @@ import { Carousel } from "primereact/carousel"
 import { RadioButton } from "primereact/radiobutton"
 import { useState } from "react"
 import { Link } from "react-router-dom"
+
+//components
 import Journal from "../../components/organisms/Journal/Journal"
 
 export const Home = () => {
     const fields = [
         { title: "Educational sciences", image: educacion },
-        { title: "Life Sciences", image: img4 },
-        { title: "Health Sciences", image: img6 },
+        { title: "Life Sciences", image: virus },
+        { title: "Health Sciences", image: img4 },
         { title: "Exacts Sciences", image: fisica },
         { title: "Social Sciences & Humanities", image: derecho },
         { title: "Journals & Books", image: books },
@@ -206,7 +199,7 @@ export const Home = () => {
         <div className='Home container'>
             <Galleria autoPlay={true} value={images} circular style={{ maxWidth: '100%' }} showItemNavigators
                 showThumbnails={false} item={itemTemplate} thumbnail={thumbnailTemplate} transitionInterval={5000} />
-            <div className="specialties" id="specialties">
+            <div className="fields" id="fields">
                 <Carousel value={products} numVisible={4} numScroll={1} responsiveOptions={responsiveOptions} showIndicators={false} className="custom-carousel" circular
                     itemTemplate={productTemplate} />
             </div>
@@ -245,7 +238,7 @@ export const Home = () => {
             </fieldset>
 
             <fieldset >
-                <legend><span style={{ color: '#336666', fontWeight: '700' }}>FOCUS G.A</span> statistics:</legend>
+                <legend><span style={{ color: '#3e6d91', fontWeight: '700' }}>FOCUS G.A</span> statistics:</legend>
                 <div className="statistics">
                     <div className="metric">
                         <p>{numberJurnals}</p>
