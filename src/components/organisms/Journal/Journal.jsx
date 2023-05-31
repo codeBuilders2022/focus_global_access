@@ -1,5 +1,6 @@
 import { Link, NavLink } from 'react-router-dom'
 import "./Journal.scss"
+import GeneralButton from '../../atoms/GeneralButton/GeneralButton'
 
 const Journal = ({ newURL, journal, index }) => {
     return (
@@ -18,7 +19,9 @@ const Journal = ({ newURL, journal, index }) => {
                 </div>
                 <p>{journal.abstract}</p>
                 <p className='p_impact'>Impact: <span className="impact">{journal.impact}</span></p>
-                <Link className='button'>Sign up</Link>
+                <Link>
+                    <GeneralButton/>
+                </Link>
             </div>
         </div>
     )

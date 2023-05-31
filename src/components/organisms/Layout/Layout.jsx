@@ -3,7 +3,7 @@ import "./Layout.scss"
 
 //components
 import Header from '../Header/Header'
-import Footer from '../../Footer/Footer'
+import Footer from '../Footer/Footer'
 
 //react
 import theme from 'primereact/resources/themes/lara-light-indigo/theme.css';   // theme

@@ -2,10 +2,10 @@
 import "./Footer.scss"
 
 //assets
-import logo from "../../assets/Logos/logo_white.png"
-import facebook from "../../assets/icons/facebook.svg"
-import youtube from "../../assets/icons/youtube.svg"
-import linkedIn from "../../assets/icons/linkedIn.svg"
+import logo from "../../../assets/Logos/logo_white.png"
+import facebook from "../../../assets/icons/facebook.svg"
+import youtube from "../../../assets/icons/youtube.svg"
+import linkedIn from "../../../assets/icons/linkedIn.svg"
 
 //react
 import { Link } from "react-router-dom"
