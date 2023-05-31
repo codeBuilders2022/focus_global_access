@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import React, { Suspense } from "react";
-import HelloWorld from "../../Pages/HelloWorld/HelloWorld";
 import Layout from "../../components/organisms/Layout/Layout";
+import { Home } from "../../Pages/Home/Home";
 const Log = () => {
     return (
         <>
@@ -17,7 +17,7 @@ const Log = () => {
                             path="/"
                             element={
                                 <Suspense fallback={<div>...Skeleton</div>}>
-                                    <HelloWorld></HelloWorld>
+                                   <Home></Home>
                                 </Suspense>
                             }
                         />
