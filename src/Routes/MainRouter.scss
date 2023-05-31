@@ -1,8 +1,13 @@
+
+
 :root {
   --primary: #336666;
   --black: #262626;
   --white: #FFF;
   --fuente-principal: 'Outfit', sans-serif;
+  --light: #edf1f2;
+  --dark: #262626;
+
 }
 
 
@@ -40,9 +45,10 @@ body {
   line-height: 1.5;
   padding-top: 60px;
   color: rgb(32, 32, 43);
-  background: rgb(240, 240, 240);
+  background: var(--light);
   margin: 0 !important;
   -webkit-font-smoothing: antialiased;
+  transition: 0.2s ease all;
 
   p,
   h1,
@@ -65,6 +71,11 @@ body {
   &::-webkit-scrollbar-thumb {
     background-color: #888;
     border-radius: 40px;
+  }
+
+  &.dark_{
+    background: var(--dark);
+    
   }
 
 
