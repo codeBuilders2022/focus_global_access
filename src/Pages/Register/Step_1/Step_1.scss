@@ -24,6 +24,12 @@
             letter-spacing: 1.5px !important;
         }
     }
+    .p-inputtext{
+        border-radius: 0px;
+        &:hover{
+            border-color: #3e6d91 !important;
+        }
+    }
 
     .Register {
         position: relative;

@@ -25,17 +25,7 @@ import cover_2 from "../../assets/images/portadas/2.png"
 import cover_3 from "../../assets/images/portadas/3.png"
 import cover_4 from "../../assets/images/portadas/4.png"
 import cover_5 from "../../assets/images/portadas/5.png"
-import cover_6 from "../../assets/images/portadas/genetica2.jpg"
-import cover_7 from "../../assets/images/portadas/jacsat.jpeg"
-import cover_8 from "../../assets/images/portadas/jyv.jpg"
-import cover_9 from "../../assets/images/portadas/microbiologia.jpg"
-import cover_10 from "../../assets/images/portadas/neurologia.jpeg"
-import cover_11 from "../../assets/images/portadas/microbiologia2.jpg"
-import cover_12 from "../../assets/images/portadas/neurologia2.jpg"
-import cover_13 from "../../assets/images/portadas/neurologia3.jpg"
-import cover_14 from "../../assets/images/portadas/physical.jpg"
-import cover_15 from "../../assets/images/portadas/psicologia2.jpg"
-import cover_16 from "../../assets/images/portadas/psicologia.jpg"
+
 
 //react
 import { Galleria } from "primereact/galleria"
@@ -43,6 +33,8 @@ import { Carousel } from "primereact/carousel"
 import { RadioButton } from "primereact/radiobutton"
 import { useState } from "react"
 import { Link } from "react-router-dom"
+
+//components
 import Journal from "../../components/organisms/Journal/Journal"
 
 export const Home = () => {
