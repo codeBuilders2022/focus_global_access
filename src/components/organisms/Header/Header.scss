@@ -14,10 +14,10 @@ $white: #fff;
     padding: 0 30px;
     top: 0;
     z-index: 100;
-    box-shadow: 2px 2px 15px rgba(0,0,0,0.15);
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
     transition: 0.2s ease all;
 
-    body.dark_ &{
+    body.dark_ & {
         background: $black;
     }
 
@@ -72,7 +72,7 @@ $white: #fff;
         }
 
         .navHeader {
-            
+
 
             @media (max-width: 768px) {
                 gap: 20px;
@@ -99,11 +99,27 @@ $white: #fff;
                     body.dark_ & {
                         color: #fff;
                     }
-                    
+
                     @media (max-width: 768px) {
                         font-size: 12px;
                     }
 
+                }
+
+                .barButtom {
+                    position: absolute;
+                    bottom: -2px;
+                    left: 20px;
+                    width: 0%;
+                    border-bottom: 2px solid rgb(240, 240, 240);
+                }
+
+                &:hover {
+                    .barButtom {
+                        width: 80%;
+                        transition: width .25s linear;
+
+                    }
                 }
 
                 .icon_ {
@@ -144,7 +160,7 @@ $white: #fff;
             }
         }
 
-        .swith_{
+        .swith_ {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -156,9 +172,9 @@ $white: #fff;
             transform: 0.2s ease all;
             box-shadow: 0 0 2px 2px rgba(0, 0, 0, .2);
 
-           .img_icon{
+            .img_icon {
                 height: 20px;
-           }
+            }
 
 
         }

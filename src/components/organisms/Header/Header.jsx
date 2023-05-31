@@ -25,10 +25,10 @@ const Header = () => {
     const navBar = [
         { title: "Home", icon: home, url: "/" },
         { title: "Search", icon: search, url: "search" },
-        { title: "Services", icon: catalogs,},
-        { title: "Events", icon: events,},
-        { title: "Publish", icon: at,},
-        { title: "About FOCUS G.A", icon: info,},
+        { title: "Services", icon: catalogs, },
+        { title: "Events", icon: events, },
+        { title: "Publish", icon: at, },
+        { title: "About FOCUS G.A", icon: info, },
     ]
 
     const handleTheme = () => {
@@ -37,7 +37,7 @@ const Header = () => {
     }
 
 
-  
+
 
     return (
         <header className='Header'>
@@ -54,6 +54,7 @@ const Header = () => {
                                     <img className="icon_" src={element.icon} />
                                     {element.title}
                                 </Link>
+                                <div className="barButtom"></div>
                             </div>
                         )
                     })}
@@ -64,9 +65,9 @@ const Header = () => {
                 <button onClick={() => navigate('/login')}>Log in</button>
                 <div className={`swith_ ${theme && "dark_"}`} onClick={handleTheme}>
                     {theme ? (
-                        <img src={Moon} alt="" className="img_icon"/>
-                    ):(
-                        <img src={Sun} alt="" className="img_icon"/>
+                        <img src={Moon} alt="" className="img_icon" />
+                    ) : (
+                        <img src={Sun} alt="" className="img_icon" />
                     )}
                 </div>
             </section>
