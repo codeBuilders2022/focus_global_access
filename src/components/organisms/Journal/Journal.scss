@@ -3,7 +3,7 @@
         grid-template-columns: 35% 62%;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -12,9 +12,9 @@
     display: grid;
     grid-template-columns: 30% 65%;
     gap: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     border-bottom: 1px solid #33666646;
-    margin-top: 10px;
+    margin-top: 20px;
 
     img {
         width: 300px;

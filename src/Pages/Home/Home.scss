@@ -10,6 +10,7 @@
     height: 100%;
     margin: 16px auto;
     gap: 15px;
+    overflow-x: hidden;
 
     .p-galleria .p-galleria-item-nav {
         background: #3e6d917c !important;
@@ -17,10 +18,13 @@
 
     .p-galleria-item {
         @media (max-width: 480px) {
-            height: 400px;
+            height: 255px;
         }
 
         img {
+            @media (max-width: 480px) {
+                height: 255px;
+            }
             height: 400px;
             object-fit: cover;
             object-position: center;
@@ -63,6 +67,10 @@
         }
 
         .lenguage {
+            @media (max-width: 480px) {
+                gap: 10px;
+                margin-bottom: 30px;
+            }
             display: flex;
             align-items: center;
             justify-content: right;
@@ -139,7 +147,11 @@
 
 
     .statistics {
-
+        @media (max-width: 480px) {
+            gap: 20px;
+            margin-top: 0px;
+            justify-content: center;
+        }
         display: flex;
         gap: 50px;
         flex-wrap: wrap;
@@ -147,11 +159,18 @@
         margin-top: 30px;
 
         .metric {
+            @media (max-width: 480px) {
+                justify-content: center;
+                width: 150px;
+            }
             display: flex;
             flex-direction: column;
             color: #3e6d91;
 
             p {
+                @media (max-width: 480px) {
+                    font-size: 40px;
+                }
                 margin: 0;
                 font-size: 50px;
                 font-weight: 700;
@@ -174,7 +193,7 @@
 
     .element {
 
-        width: 87%;
+        width: 90%;
         height: 100px;
         // background-color: #120f1d !important;
         background-repeat: no-repeat;
