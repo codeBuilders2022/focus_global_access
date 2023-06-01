@@ -196,7 +196,7 @@ const Home = () => {
     const numberJurnals = dataApi.length
 
     return (
-        <div className='Home container'>
+        <div className='Home containerG'>
             <Galleria autoPlay={true} value={images} circular style={{ maxWidth: '100%' }} showItemNavigators
                 showThumbnails={false} item={itemTemplate} thumbnail={thumbnailTemplate} transitionInterval={5000} />
             <div className="fields" id="fields">
