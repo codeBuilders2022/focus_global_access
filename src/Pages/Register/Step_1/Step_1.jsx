@@ -9,15 +9,21 @@ import warning from "../../../assets/icons/warning.svg"
 //react
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
+import { useNavigate } from "react-router-dom";
 
 const Step_1 = () => {
-
+    const navigate = useNavigate()
     const [activate, setActivate] = useState(false)
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        navigate('/register/step_2')
+    }
 
     return (
         <div className="Step_1">
             <div className="card"></div>
-            <form className="Register">
+            <form onSubmit={handleSubmit} className="Register">
                 <div className="containerR">
                     <img src={logo} />
                     <h3>Welcome</h3>
