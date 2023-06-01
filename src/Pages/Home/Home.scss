@@ -4,6 +4,10 @@
         flex-direction: column;
     }
 
+    body.dark & {
+        background-color: #222e35;
+    }
+
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -72,6 +76,10 @@
     fieldset {
         @media (max-width: 480px) {
             margin: 0;
+        }
+
+        body.dark & {
+            color: white;
         }
 
         text-align: center;
@@ -164,19 +172,27 @@
         justify-content: right;
         margin-top: 10px;
 
-        img {
+        svg {
             transform: rotate(-90deg);
+
+            body.dark & {
+                stroke: white;
+            }
         }
 
         a {
             color: #3e6d91;
             text-decoration: none;
+
+            body.dark & {
+                color: white;
+            }
         }
 
         display: flex;
         align-items: center;
 
-        .int_next{
+        .int_next {
             width: 300px;
             display: flex;
             align-items: center;
@@ -185,11 +201,21 @@
             border: 1px solid transparent;
 
             &:hover {
-                border: 1px solid #336666;
+                border: 1px solid #3e6d91;
             }
+
+
         }
     }
 
+    fieldset {
+        span {
+            body.dark & {
+                color: white !important;
+            }
+        }
+
+    }
 
     .statistics {
         @media (max-width: 480px) {
@@ -213,6 +239,10 @@
             display: flex;
             flex-direction: column;
             color: #3e6d91;
+
+            body.dark & {
+                color: white;
+            }
 
             p {
                 @media (max-width: 480px) {
@@ -243,7 +273,6 @@
 
         width: 90%;
         height: 100px;
-        // background-color: #120f1d !important;
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -258,15 +287,22 @@
         transform: scale(1);
         border: none;
 
+        body.dark & {
+            background-color: #222e35;
+            border: 1px solid #3e6d91;
+        }
+
         &:hover {
             overflow: hidden;
             color: rgb(255, 255, 255);
+            border: none !important;
 
             img {
                 display: flex;
                 transition: display .2s linear;
                 object-fit: cover;
                 object-position: bottom;
+
             }
         }
 
@@ -294,7 +330,6 @@
             left: 0;
             width: 100%;
             height: 200px;
-            border-radius: 10px;
             z-index: 9;
             opacity: 0.7;
             display: none;

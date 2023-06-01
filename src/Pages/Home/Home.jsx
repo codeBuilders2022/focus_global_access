@@ -233,7 +233,10 @@ const Home = () => {
                 )}
                 <div className='next'>
                     <div className="int_next">
-                        <img src={next} />
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="35" height="35" viewBox="0 0 24 24" stroke-width="1.5" stroke="#120f1d" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg>
                         <Link to={'/advanced-search'}>Advanced search</Link>
                     </div>
                 </div>
