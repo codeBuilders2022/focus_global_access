@@ -1,10 +1,50 @@
 {
   "files": {
-    "main.js": "/static/js/main.83827738.js",
+    "main.css": "/static/css/main.0c6252ad.css",
+    "main.js": "/static/js/main.f2d7bc80.js",
+    "static/media/1.png": "/static/media/1.c6db46977f1872883c42.png",
+    "static/media/2.png": "/static/media/2.54b0850d94397c5d6d23.png",
+    "static/media/0.png": "/static/media/0.578828b857a879c13a80.png",
+    "static/media/earth.png": "/static/media/earth.00437ef20a938080438a.png",
+    "static/media/graphics.png": "/static/media/graphics.b0ecafd3b35b50a6f97d.png",
+    "static/media/ai.png": "/static/media/ai.f3a715a0be317d033644.png",
+    "static/media/stethoscope.jpg": "/static/media/stethoscope.7c90eb2d8cb94e1fd881.jpg",
+    "static/media/ADN.jpg": "/static/media/ADN.4b3110eda62d413b2af0.jpg",
+    "static/media/periodic-table.jpg": "/static/media/periodic-table.6b7e4abadc131c2a781c.jpg",
+    "static/media/5.png": "/static/media/5.10a26500eba165393848.png",
+    "static/media/educacion.jpg": "/static/media/educacion.63822cf1f2cc2fd189ef.jpg",
+    "static/media/primeicons.svg": "/static/media/primeicons.e1441b135b3ca9ad643c.svg",
+    "static/media/4.png": "/static/media/4.454684f7cf76adcb5bcd.png",
+    "static/media/3.png": "/static/media/3.23b163190e3e5fb6c972.png",
+    "static/media/virus.jpg": "/static/media/virus.cb5139f062bce5149b1f.jpg",
+    "static/media/virus2.jpg": "/static/media/virus2.d1ccd92c6ff35a86c739.jpg",
+    "static/media/bacteria.jpg": "/static/media/bacteria.39302bc013c259659eb9.jpg",
+    "static/media/adn2.jpg": "/static/media/adn2.13d5b11c3b5520245dea.jpg",
+    "static/media/books.jpg": "/static/media/books.af77061a266c0ba76d65.jpg",
+    "static/media/primeicons.eot": "/static/media/primeicons.d44157bdfa026dc877af.eot",
+    "static/media/primeicons.woff": "/static/media/primeicons.10d3152104f2208ac82a.woff",
+    "static/media/primeicons.ttf": "/static/media/primeicons.ea5358601d0a3fd6670b.ttf",
+    "static/media/logo focus_w.png": "/static/media/logo focus_w.dc4aef3a6f9d06666b99.png",
+    "static/media/logo_white.png": "/static/media/logo_white.81a28633a4dbb89427d6.png",
+    "static/media/primeicons.woff2": "/static/media/primeicons.78172950b335ccdb94e2.woff2",
+    "static/media/color.png": "/static/media/color.6441e63a57ccc5105bad.png",
     "index.html": "/index.html",
-    "main.83827738.js.map": "/static/js/main.83827738.js.map"
+    "static/media/events.svg": "/static/media/events.3c2036e6cb26012e8436de75f507a261.svg",
+    "static/media/linkedIn.svg": "/static/media/linkedIn.63ee2524cfafe8ab7ed0034f79cd956e.svg",
+    "static/media/warning.svg": "/static/media/warning.17e8af394ef9ce49f3e0398752ecf3a0.svg",
+    "static/media/catalogs.svg": "/static/media/catalogs.7b1e20e4b6094f5073be121b102afaab.svg",
+    "static/media/home.svg": "/static/media/home.c60e396f73c59a8a92bb42da9967dd8e.svg",
+    "static/media/info.svg": "/static/media/info.d39f3c1e2122d02b9deda62a215ce6ef.svg",
+    "static/media/facebook.svg": "/static/media/facebook.13cd6904536e7cfe66658ea416471c78.svg",
+    "static/media/youtube.svg": "/static/media/youtube.cee2eb10f5ae0f2887a05d8d8277fc37.svg",
+    "static/media/search.svg": "/static/media/search.84323caa3ccd517d3cb0300aa9cdebec.svg",
+    "static/media/at.svg": "/static/media/at.d40e725ef8b08744b5f557258ccc59aa.svg",
+    "static/media/next.svg": "/static/media/next.eb6f57fdb40e2202a6b7a178c0814b24.svg",
+    "main.0c6252ad.css.map": "/static/css/main.0c6252ad.css.map",
+    "main.f2d7bc80.js.map": "/static/js/main.f2d7bc80.js.map"
   },
   "entrypoints": [
-    "static/js/main.83827738.js"
+    "static/css/main.0c6252ad.css",
+    "static/js/main.f2d7bc80.js"
   ]
 }
