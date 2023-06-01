@@ -1,6 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
 import Guest from './Guest/Guest'
-import React from 'react';
+import "./MainRouter.scss"
 const MainRouter =()=>
 {
     return(
