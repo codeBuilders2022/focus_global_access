@@ -232,8 +232,10 @@ export const Home = () => {
                     </div>
                 )}
                 <div className='next'>
-                    <img src={next} />
-                    <Link to={'/advanced-search'}>Advanced search</Link>
+                    <div className="int_next">
+                        <img src={next} />
+                        <Link to={'/advanced-search'}>Advanced search</Link>
+                    </div>
                 </div>
             </fieldset>
 
