@@ -21,9 +21,20 @@
     place-items: center;
     cursor: pointer;
 
+    body.dark & {
+        background: transparent;
+        border: 1px solid #3e6d91;
+    }
+
     &:hover {
         color: #3e6d91;
         background: white;
         border: 1px solid #3e6d91;
+
+        body.dark & {
+            color: white;
+            letter-spacing: 1.5px;
+            transition: letter-spacing .3s linear;
+        }
     }
 }

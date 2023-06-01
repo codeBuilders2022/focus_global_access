@@ -15,6 +15,10 @@
     padding-bottom: 10px;
     border-bottom: 1px solid #33666646;
     margin-top: 20px;
+    
+    body.dark & {
+        border-bottom: 1px solid rgba(235, 235, 235, 0.263);
+    }
 
     img {
         width: 300px;
@@ -87,6 +91,10 @@
                     font-size: 14px;
                 }
 
+                body.dark & {
+                    color: white;
+                }
+
                 text-decoration: none;
                 font-style: italic;
                 color: #120f1d;
@@ -105,6 +113,16 @@
             letter-spacing: 1.5px;
             font-weight: 600;
             color: #3e6d91;
+
+            body.dark & {
+                color: white;
+            }
+
+            span{
+                body.dark & {
+                    color: rgb(181, 181, 181);
+                }
+            }
         }
     }
 }
