@@ -1,7 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.0c6252ad.css",
-    "main.js": "/static/js/main.f2d7bc80.js",
+    "main.css": "/static/css/main.af1545df.css",
+    "main.js": "/static/js/main.2cacbe96.js",
+    "static/js/765.1f7da2e9.chunk.js": "/static/js/765.1f7da2e9.chunk.js",
+    "static/js/626.3ae5183e.chunk.js": "/static/js/626.3ae5183e.chunk.js",
+    "static/js/321.0bd1538e.chunk.js": "/static/js/321.0bd1538e.chunk.js",
+    "static/js/234.4af11447.chunk.js": "/static/js/234.4af11447.chunk.js",
+    "static/js/588.36abf5d0.chunk.js": "/static/js/588.36abf5d0.chunk.js",
+    "static/js/727.023000b5.chunk.js": "/static/js/727.023000b5.chunk.js",
+    "static/js/977.620c3095.chunk.js": "/static/js/977.620c3095.chunk.js",
+    "static/js/581.2e07de13.chunk.js": "/static/js/581.2e07de13.chunk.js",
     "static/media/1.png": "/static/media/1.c6db46977f1872883c42.png",
     "static/media/2.png": "/static/media/2.54b0850d94397c5d6d23.png",
     "static/media/0.png": "/static/media/0.578828b857a879c13a80.png",
@@ -25,26 +33,29 @@
     "static/media/primeicons.woff": "/static/media/primeicons.10d3152104f2208ac82a.woff",
     "static/media/primeicons.ttf": "/static/media/primeicons.ea5358601d0a3fd6670b.ttf",
     "static/media/logo focus_w.png": "/static/media/logo focus_w.dc4aef3a6f9d06666b99.png",
+    "static/media/logo_black.png": "/static/media/logo_black.dc4aef3a6f9d06666b99.png",
     "static/media/logo_white.png": "/static/media/logo_white.81a28633a4dbb89427d6.png",
     "static/media/primeicons.woff2": "/static/media/primeicons.78172950b335ccdb94e2.woff2",
     "static/media/color.png": "/static/media/color.6441e63a57ccc5105bad.png",
     "index.html": "/index.html",
-    "static/media/events.svg": "/static/media/events.3c2036e6cb26012e8436de75f507a261.svg",
     "static/media/linkedIn.svg": "/static/media/linkedIn.63ee2524cfafe8ab7ed0034f79cd956e.svg",
-    "static/media/warning.svg": "/static/media/warning.17e8af394ef9ce49f3e0398752ecf3a0.svg",
-    "static/media/catalogs.svg": "/static/media/catalogs.7b1e20e4b6094f5073be121b102afaab.svg",
-    "static/media/home.svg": "/static/media/home.c60e396f73c59a8a92bb42da9967dd8e.svg",
-    "static/media/info.svg": "/static/media/info.d39f3c1e2122d02b9deda62a215ce6ef.svg",
+    "static/media/warning.svg": "/static/media/warning.b332041711474bb16f8075fc612c41ff.svg",
     "static/media/facebook.svg": "/static/media/facebook.13cd6904536e7cfe66658ea416471c78.svg",
     "static/media/youtube.svg": "/static/media/youtube.cee2eb10f5ae0f2887a05d8d8277fc37.svg",
-    "static/media/search.svg": "/static/media/search.84323caa3ccd517d3cb0300aa9cdebec.svg",
-    "static/media/at.svg": "/static/media/at.d40e725ef8b08744b5f557258ccc59aa.svg",
     "static/media/next.svg": "/static/media/next.eb6f57fdb40e2202a6b7a178c0814b24.svg",
-    "main.0c6252ad.css.map": "/static/css/main.0c6252ad.css.map",
-    "main.f2d7bc80.js.map": "/static/js/main.f2d7bc80.js.map"
+    "main.af1545df.css.map": "/static/css/main.af1545df.css.map",
+    "main.2cacbe96.js.map": "/static/js/main.2cacbe96.js.map",
+    "765.1f7da2e9.chunk.js.map": "/static/js/765.1f7da2e9.chunk.js.map",
+    "626.3ae5183e.chunk.js.map": "/static/js/626.3ae5183e.chunk.js.map",
+    "321.0bd1538e.chunk.js.map": "/static/js/321.0bd1538e.chunk.js.map",
+    "234.4af11447.chunk.js.map": "/static/js/234.4af11447.chunk.js.map",
+    "588.36abf5d0.chunk.js.map": "/static/js/588.36abf5d0.chunk.js.map",
+    "727.023000b5.chunk.js.map": "/static/js/727.023000b5.chunk.js.map",
+    "977.620c3095.chunk.js.map": "/static/js/977.620c3095.chunk.js.map",
+    "581.2e07de13.chunk.js.map": "/static/js/581.2e07de13.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0c6252ad.css",
-    "static/js/main.f2d7bc80.js"
+    "static/css/main.af1545df.css",
+    "static/js/main.2cacbe96.js"
   ]
 }
