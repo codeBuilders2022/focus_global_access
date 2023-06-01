@@ -93,6 +93,6 @@ img {
 }
 
 .container {
-  width: min(95%, 144rem);
+  width: min(95%, 144rem) !important;
   margin: 12px auto !important;
 }

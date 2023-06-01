@@ -21,10 +21,10 @@ const Step_1 = () => {
                 <div className="container">
                     <img src={logo} />
                     <h3>Welcome</h3>
-                    <p>Enter your email to continue with <strong>FOCUS G.A</strong></p>
+                    <p>Enter your email to continue</p>
                     <div className="input">
                         <label>E-mail</label>
-                        <InputText id="email" name="email" placeholder="email" type="email"
+                        <InputText id="email" name="email" placeholder="E-mail" type="email"
                         />
                         {activate &&
                             <div className="messageError">

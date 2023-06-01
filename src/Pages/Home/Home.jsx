@@ -37,7 +37,7 @@ import { Link } from "react-router-dom"
 //components
 import Journal from "../../components/organisms/Journal/Journal"
 
-export const Home = () => {
+const Home = () => {
     const fields = [
         { title: "Educational sciences", image: educacion },
         { title: "Life Sciences", image: virus },
@@ -232,8 +232,10 @@ export const Home = () => {
                     </div>
                 )}
                 <div className='next'>
-                    <img src={next} />
-                    <Link to={'/advanced-search'}>Advanced search</Link>
+                    <div className="int_next">
+                        <img src={next} />
+                        <Link to={'/advanced-search'}>Advanced search</Link>
+                    </div>
                 </div>
             </fieldset>
 
@@ -263,3 +265,5 @@ export const Home = () => {
         </div>
     )
 }
+
+export default Home
