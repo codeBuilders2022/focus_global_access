@@ -6,7 +6,7 @@
   --white: #FFF;
   --fuente-principal: 'Outfit', sans-serif;
   --light: #edf1f2;
-  --dark: #262626;
+  --dark: #222e35;
 
 }
 
@@ -73,7 +73,7 @@ body {
     border-radius: 40px;
   }
 
-  &.dark_{
+  &.dark{
     background: var(--dark);
     
   }

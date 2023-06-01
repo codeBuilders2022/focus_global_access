@@ -3,25 +3,29 @@ import "./Header.scss"
 
 //assets
 import logo from "../../../assets/Logos/logo_white.png"
-import home from "../../../assets/icons/home.svg"
-import catalogs from "../../../assets/icons/catalogs.svg"
-import search from "../../../assets/icons/search.svg"
-import at from "../../../assets/icons/at.svg"
-import events from "../../../assets/icons/events.svg"
-import info from "../../../assets/icons/info.svg"
+import logoBlack from "../../../assets/Logos/logo_black.png"
+
+import home from "../../../assets/images/home.png"
+import catalogs from "../../../assets/images/catalogs.png"
+import search from "../../../assets/images/search.png"
+import at from "../../../assets/images/at.png"
+import events from "../../../assets/images/events.png"
+import info from "../../../assets/images/info.png"
+
 import Moon from '../../../assets/images/moon.png'
 import Sun from '../../../assets/images/sol.png'
 
 //react
-import { useNavigate, Link } from "react-router-dom"
-import { useState } from "react"
+import { useNavigate, Link, NavLink } from "react-router-dom"
+import { useStateContext } from '../../../context/ContextProvider'
+import { useEffect, useState } from "react"
 
 
 
 const Header = () => {
     const navigate = useNavigate()
-    const [theme, setTheme] = useState(false)
-
+    const { handleTheme, theme } = useStateContext()
+    const [myTheme, setMyTheme] = useState("")
     const navBar = [
         { title: "Home", icon: home, url: "/" },
         { title: "Search", icon: search, url: "search" },
@@ -31,42 +35,46 @@ const Header = () => {
         { title: "About FOCUS G.A", icon: info, },
     ]
 
-    const handleTheme = () => {
-        document.body.classList.toggle("dark_")
-        setTheme(!theme)
-    }
+    useEffect(() => {
+        const themes = localStorage.getItem("theme")
+        setMyTheme(themes)
+    }, [theme])
 
+    console.log(theme)
 
-
+    console.log(myTheme, "my theme")
 
     return (
         <header className='Header'>
             <div className="left">
                 <div className="logo">
-                    <img className="logoImg" src={logo} onClick={() => navigate('/')} style={{ cursor: 'pointer' }} />
+                    {myTheme === "light" ? (
+                        <img className="logoImg" src={logoBlack} onClick={() => navigate('/')} style={{ cursor: 'pointer' }} />    
+                    ):(
+                        <img className="logoImg" src={logo} onClick={() => navigate('/')} style={{ cursor: 'pointer' }} />
+                    )}
                     {/* <h1 className="title"><span></span>Focus</h1> */}
                 </div>
                 <nav className="navHeader">
                     {navBar.map((element, index) => {
                         return (
-                            <div className="optionsNav" key={index}>
-                                <Link to={element.url}>
+                            <section className="optionsNav" key={index}>
+                                <NavLink to={element.url} className={"navlink_k"}>
                                     <img className="icon_" src={element.icon} />
                                     {element.title}
-                                </Link>
-                                <div className="barButtom"></div>
-                            </div>
+                                </NavLink>
+                            </section>
                         )
                     })}
                 </nav>
             </div>
             <section className="user_t">
-                <button onClick={() => navigate('/register')}>Sign up</button>
-                <button onClick={() => navigate('/login')}>Log in</button>
-                <div className={`swith_ ${theme && "dark_"}`} onClick={handleTheme}>
-                    {theme ? (
-                        <img src={Moon} alt="" className="img_icon" />
-                    ) : (
+                <button onClick={() => navigate('/register')}>Create account</button>
+                <button onClick={() => navigate('/login')}>Sign in</button>
+                <div className={`swith_`} onClick={handleTheme}>
+                    {myTheme === "light" ? (
+                        <img src={Moon} alt="" className="darkl" />
+                        ) : (
                         <img src={Sun} alt="" className="img_icon" />
                     )}
                 </div>
