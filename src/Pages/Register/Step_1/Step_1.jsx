@@ -18,7 +18,7 @@ const Step_1 = () => {
         <div className="Step_1">
             <div className="card"></div>
             <form className="Register">
-                <div className="container">
+                <div className="containerR">
                     <img src={logo} />
                     <h3>Welcome</h3>
                     <p>Enter your email to continue</p>
