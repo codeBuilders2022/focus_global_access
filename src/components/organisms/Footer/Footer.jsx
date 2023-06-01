@@ -3,20 +3,27 @@ import "./Footer.scss"
 
 //assets
 import logo from "../../../assets/Logos/logo_white.png"
+import logoDark from "../../../assets/Logos/logo_black.png"
 import facebook from "../../../assets/icons/facebook.svg"
 import youtube from "../../../assets/icons/youtube.svg"
 import linkedIn from "../../../assets/icons/linkedIn.svg"
 
 //react
 import { Link } from "react-router-dom"
+import { useEffect, useState } from "react"
 
 const Footer = () => {
 
-    const social = [
-        facebook,
-        youtube,
-        linkedIn
-    ]
+    const social = [ facebook, youtube, linkedIn ]
+    const [mytheme, setMytheme] = useState()
+
+    useEffect(() => {
+      const themes = localStorage.getItem("theme")
+      setMytheme(themes)
+    }, [])
+    
+
+
 
 
     return (
@@ -24,7 +31,11 @@ const Footer = () => {
             <div className="content">
 
                 <div className="logo">
-                    <img className="logoImg" src={logo} />
+                    {mytheme === "light" ? (
+                        <img className="logoImg" src={logoDark} />
+                    ):(
+                        <img className="logoImg" src={logo} />
+                    )}
                 </div>
                 <div className="options">
                     <div className='top'>
