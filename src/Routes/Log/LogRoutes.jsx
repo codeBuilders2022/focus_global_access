@@ -1,43 +1,52 @@
 import { Route, Routes } from "react-router-dom";
-import React, { Suspense } from "react";
-import Layout from "../../components/organisms/Layout/Layout";
-import { Home } from "../../Pages/Home/Home";
-import Step_1 from "../../Pages/Register/Step_1/Step_1";
-const Log = () => {
+import Layout from "../../components/organisms/Layout/Layout"
+import { Suspense, lazy } from "react";
+const Home = lazy(()=>import('../../Pages/Home/Home')) 
+const Step_1 = lazy(()=>import('../../Pages/Register/Step_1/Step_1')) 
+const Step_2 = lazy(()=>import('../../Pages/Register/Step_2/Step_2')) 
+
+
+
+const LogRoutes = () => {
+
     return (
         <>
             <Routes>
                 <Route
-                    exact
                     element={
                         <Layout />
                     }
                     children={
                         <>
                             <Route
-                                exact
                                 path="/"
                                 element={
                                     <Suspense fallback={<div>...Skeleton</div>}>
-                                        <Home></Home>
+                                        <Home />
                                     </Suspense>
                                 }
                             />
                             <Route
-                                exact
                                 path="/register"
                                 element={
                                     <Suspense fallback={<div>...Skeleton</div>}>
-                                        <Step_1/>
+                                        <Step_1 />
+                                    </Suspense>
+                                }
+                            />
+                            <Route
+                                path="/register/step_2"
+                                element={
+                                    <Suspense fallback={<div>...Skeleton</div>}>
+                                        <Step_2 />
                                     </Suspense>
                                 }
                             />
                         </>
                     }
                 />
-
             </Routes>
         </>
     );
 };
-export default Log;
+export default LogRoutes;

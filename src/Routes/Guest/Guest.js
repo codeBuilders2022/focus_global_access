@@ -1,9 +1,8 @@
-import Log from "../Log/Log";
+import LogRoutes from "../Log/LogRoutes";
+
 const Guest = () => {
   return (
-    <>
-      <Log></Log>
-    </>
-  );
+      <LogRoutes />
+    );
 };
 export default Guest;

@@ -17,6 +17,9 @@
         background-color: #ffffffa1;
         z-index: 1;
     }
+    .p-inputtext:enabled:focus{
+        border-radius: #3e6d91 !important;
+    }
     .p-button{
         border-radius: 0 !important;
 
