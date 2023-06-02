@@ -31,7 +31,7 @@ import cover_5 from "../../assets/images/portadas/5.png"
 import { Galleria } from "primereact/galleria"
 import { Carousel } from "primereact/carousel"
 import { RadioButton } from "primereact/radiobutton"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 
 //components
@@ -46,86 +46,15 @@ const Home = () => {
         { title: "Social Sciences & Humanities", image: derecho },
         { title: "Journals & Books", image: books },
     ]
+    //states
     const [products, setProducts] = useState(fields);
     const [lenguage, setLenguage] = useState('English');
+    const [numberMonth, setNumbersMonth] = useState([])
     const [specialtySearch, setSpecialySearch] = useState('')
-
-    // var months
-    const month = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
-        'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
-
-    // main gallery images
-    const images = [
-        { img: img1 },
-        { img: img2 },
-        { img: img5 },
-        { img: img8 },
-        { img: img9 },
-        { img: img10 },
-    ]
-
-    // gallery templates
-    const itemTemplate = (item) => {
-        return <img src={item.img} alt={item} style={{ width: '100%', display: 'block' }} />;
-    }
-
-    // gallery templates
-    const thumbnailTemplate = (item) => {
-        return <img src={item.img} alt={item} style={{ display: 'block' }} />;
-    }
-
-    // current year
-    let year = new Date().getFullYear()
-
-
-    const responsiveOptions = [
-        {
-            breakpoint: '1280px',
-            numVisible: 4,
-            numScroll: 1
-        },
-        {
-            breakpoint: '1199px',
-            numVisible: 3,
-            numScroll: 1
-        },
-        {
-            breakpoint: '991px',
-            numVisible: 3,
-            numScroll: 1
-        },
-        {
-            breakpoint: '660px',
-            numVisible: 2,
-            numScroll: 1
-        },
-        {
-            breakpoint: '480px',
-            numVisible: 1,
-            numScroll: 1
-        }
-    ];
-
-    //fuction scroll
-    const handleClick = (id) => {
-        document.getElementById('specialties')?.scrollIntoView({ behavior: "smooth" });
-        setSpecialySearch(id)
-    }
-
-    // top specialty carousel templates
-    const productTemplate = (e) => {
-        return (
-            <div className="card" onClick={() => handleClick(e.title)}>
-                <button className="element">
-                    <p>{e.title}</p>
-                    <img src={e.image} />
-                </button>
-            </div>
-        );
-    };
+    const [articles, setArticles] = useState()
 
     //dataApi
-    const [dataApi, setDataApi] = useState([
+    const data = [
         {
             id: 0,
             lenguage: "English",
@@ -192,8 +121,111 @@ const Home = () => {
             citescore: 7.39,
             volume: 33,
         },
-    ])
+    ]
+    const [dataApi, setDataApi] = useState(data)
     const numberJurnals = dataApi.length
+
+    // var months
+    const month = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+        'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
+
+    // main gallery images
+    const images = [
+        { img: img1 },
+        { img: img2 },
+        { img: img5 },
+        { img: img8 },
+        { img: img9 },
+        { img: img10 },
+    ]
+
+    // gallery templates
+    const itemTemplate = (item) => {
+        return <img src={item.img} alt={item} style={{ width: '100%', display: 'block' }} />;
+    }
+
+    // gallery templates
+    const thumbnailTemplate = (item) => {
+        return <img src={item.img} alt={item} style={{ display: 'block' }} />;
+    }
+
+    // current year
+    let year = new Date().getFullYear()
+
+
+    const responsiveOptions = [
+        {
+            breakpoint: '1280px',
+            numVisible: 4,
+            numScroll: 1
+        },
+        {
+            breakpoint: '1199px',
+            numVisible: 3,
+            numScroll: 1
+        },
+        {
+            breakpoint: '991px',
+            numVisible: 3,
+            numScroll: 1
+        },
+        {
+            breakpoint: '660px',
+            numVisible: 2,
+            numScroll: 1
+        },
+        {
+            breakpoint: '480px',
+            numVisible: 1,
+            numScroll: 1
+        }
+    ];
+
+    //searcher
+    useEffect(() => {
+
+        // In this useEffect hook, the search process
+        // for journals by specialty is carried out and
+        const dataF = data
+        let ind = []
+        if (specialtySearch.length == 0) {
+            setDataApi(data)
+        } else if (specialtySearch == "Journals & Books") {
+            setDataApi(data)
+        } else {
+            dataF.map((e, index) => {
+                if (e.fields.includes(specialtySearch)) {
+                    ind.push(dataF[index])
+                } else {
+                    setDataApi([])
+                }
+            })
+
+            if (ind.length > 0) {
+                setDataApi(ind)
+            }
+        }
+    }, [specialtySearch])
+
+    //fuction scroll
+    const handleClick = (id) => {
+        document.getElementById('fields')?.scrollIntoView({ behavior: "smooth" });
+        setSpecialySearch(id)
+    }
+
+    // top specialty carousel templates
+    const productTemplate = (e) => {
+        return (
+            <div className="card" onClick={() => handleClick(e.title)}>
+                <button className="element">
+                    <p>{e.title}</p>
+                    <img src={e.image} />
+                </button>
+            </div>
+        );
+    };
+
+
 
     return (
         <div className='Home containerG'>

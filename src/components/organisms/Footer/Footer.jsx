@@ -32,7 +32,8 @@ const Footer = () => {
 
                 <div className="logo">
                     {mytheme === "light" ? (
-                        <img className="logoImg" src={logoDark} />
+                        <img className="logoImg" src={logo} />
+                        // <img className="logoImg" src={logoDark} />
                     ):(
                         <img className="logoImg" src={logo} />
                     )}
