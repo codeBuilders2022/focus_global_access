@@ -1,6 +1,6 @@
-.Step_1 {
+.Step_3 {
     width: 100%;
-    min-height: calc(100vh - 212px);
+    min-height: calc(100vh - 210px);
     padding-top: 100px;
     // background-image: url('../../img/magnifying.jpg');
     background: rgba(128, 128, 128, 0.598);
@@ -20,6 +20,35 @@
 
     .p-inputtext:enabled:focus {
         border-radius: #3e6d91 !important;
+    }
+
+    .p-dropdown:not(.p-disabled):hover {
+        border-color: #3e6d91 !important
+    }
+
+    .p-inputtext:enabled:hover {
+        border-color: #3e6d91 !important;
+    }
+
+    .p-button:enabled:hover,
+    .p-button:not(button):not(a):not(.p-disabled):hover {
+        background: #3e6d91 !important;
+        color: #ffffff;
+        border-color: #3e6d91 !important;
+    }
+
+    .p-button:enabled:active,
+    .p-button:not(button):not(a):not(.p-disabled):active {
+        background: #3e6d91;
+        color: #ffffff;
+        border-color: #3e6d91;
+    }
+
+    .p-inputtext:enabled:focus {
+        outline: 0 none;
+        outline-offset: 0;
+        box-shadow: 0 0 0 0.2rem #C7D2FE;
+        border-color: #3e6d91 !important;
     }
 
     .p-button {
@@ -75,9 +104,8 @@
             }
 
             img {
-                width: 100%;
-                max-width: 143px;
-                min-height: 50px;
+                width: 143px;
+                height: 50px;
             }
 
             .codeNumber {
