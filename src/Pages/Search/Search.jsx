@@ -144,7 +144,10 @@ const Search = () => {
                 <div className="avanced">
                     <p>Search for your content in our databases with {numberJurnals} journals and access to over {numberJurnals * 28} articles</p>
                     <div className='next'>
-                        <img src={next} />
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="35" height="35" viewBox="0 0 24 24" stroke-width="1.5" stroke="#120f1d" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg>
                         <Link to={'/advanced-search'}>Advanced search</Link>
                     </div>
                 </div>
@@ -160,7 +163,7 @@ const Search = () => {
                                     <h3>{e.name}</h3>
                                     <img src={e.image} />
                                     <Link>
-                                        <button>Ver más</button>
+                                        <button>Explore</button>
                                     </Link>
 
                                 </div>
@@ -168,7 +171,7 @@ const Search = () => {
                         })}
                     </div>
                 ) : (<div className='error'>
-                    No se encontraron resultados para "{search}"
+                    Sorry, no results found for "{search}"
                     {mytheme === "light" ?
                         <img src={errorIcon} />
                         :
