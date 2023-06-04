@@ -13,7 +13,7 @@ import events from "../../../assets/images/events.png"
 import info from "../../../assets/images/info.png"
 
 import Moon from '../../../assets/images/moon.png'
-import Sun from '../../../assets/images/sol.png'
+import Sun from '../../../assets/images/Sol.png'
 
 //react
 import { useNavigate, Link, NavLink } from "react-router-dom"
