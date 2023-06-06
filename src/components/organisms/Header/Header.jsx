@@ -21,7 +21,7 @@ import Sun from '../../../assets/images/sol.png'
 //react
 import { useNavigate, Link, NavLink } from "react-router-dom"
 import { useStateContext } from '../../../context/ContextProvider'
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import Sidebar from "../../molecules/Sidebar/Sidebar"
 
 
@@ -29,23 +29,20 @@ import Sidebar from "../../molecules/Sidebar/Sidebar"
 const Header = () => {
     const navigate = useNavigate()
     
-    const { handleTheme, theme, openSidebar, setOpenSidebar } = useStateContext()
+    const { handleTheme, theme, setTheme, openSidebar, setOpenSidebar } = useStateContext()
     const [myTheme, setMyTheme] = useState("")
     const [showCategories, setShowCategories] = useState(false)
+    const profileRef = useRef();
+
     const navBar = [
         { title: "Home", icon: home, url: "/" },
-        { title: "Search", icon: search, url: "search" },
-        { title: "Services", icon: catalogs, },
-        { title: "Events", icon: events, },
-        { title: "Publish", icon: at, },
-        { title: "About FOCUS G.A", icon: info, },
+        { title: "Search", icon: search, url: "/search" },
+        { title: "Services", icon: catalogs, url: "#"},
+        { title: "Events", icon: events, url: "#"},
+        { title: "Publish", icon: at, url: "#"},
+        { title: "About FOCUS G.A", icon: info, url: "#" },
     ]
 
-
-    useEffect(() => {
-        const themes = localStorage.getItem("theme")
-        setMyTheme(themes)
-    }, [theme])
 
     const filterOptions = navBar.filter(
       (elem) =>
@@ -69,6 +66,45 @@ const Header = () => {
         setShowCategories(false)
     }
 
+    useEffect(() => {
+        const storedTheme = localStorage.getItem("theme");
+        setMyTheme(storedTheme)
+        if (storedTheme === "dark") {
+            setTheme(true);
+        }
+    }, [theme])
+
+    useEffect(() => {
+        const findClass = document.querySelector(".cnt_excludeOp");
+        if (!findClass) return; // Salir si no se encuentra el elemento
+        
+        if (showCategories) {
+          const timeoutId = setTimeout(() => {
+            findClass.classList.add("activeModal");
+          }, 0);
+          
+          return () => clearTimeout(timeoutId); // Limpiar el timeout al desmontar el componente
+        } else {
+          findClass.classList.remove("activeModal");
+        }
+      }, [showCategories]);
+
+      useEffect(() => {
+        const handleClickOutside = (event) => {
+          const classNamesToExclude = ['cnt_excludeOp', 'ctn_soport', 'cnt_ul', 'clas_categories', 'arrow-down'];
+          const shouldCloseCategories = classNamesToExclude.every(className => !event.target.classList.contains(className));
+      
+          if (profileRef.current && !profileRef.current.contains(event.target) && shouldCloseCategories) {
+            setShowCategories(false);
+          }
+        };
+      
+        document.addEventListener('mousedown', handleClickOutside);
+      
+        return () => {
+          document.removeEventListener('mousedown', handleClickOutside);
+        };
+      }, []);
 
     return (
         <header className='Header'>
@@ -103,22 +139,24 @@ const Header = () => {
                             </li>
                         )
                     })}
-                    <div className="cnt_list">
+                    <div className={`cnt_list`}>
                         <li className="clas_categories" onClick={() => handleClickOp()}>Categories</li>
                         <img src={ArrowDown} alt="" className={`arrow-down ${showCategories && "roatte-e"}`} onClick={() => handleClickOp()}/>
 
                         {showCategories &&
-                            <div className="cnt_excludeOp">
-                                <ul className="cnt_ul">
-                                    {excludeOptions.map((_, idx) => (
-                                        <li key={idx} className="l-iC" onClick={closeShow}>
-                                            <NavLink to={_.url} className={"exclu_li"}>
-                                                <img src={_.icon} alt="" className="cino_exlu" />
-                                                {_.title}
-                                            </NavLink>
-                                        </li>
-                                    ))}
-                                </ul>
+                            <div className="ctn_soport" ref={profileRef}>
+                                <div className={`cnt_excludeOp`}>
+                                    <ul className="cnt_ul">
+                                        {excludeOptions.map((_, idx) => (
+                                            <li key={idx} className="l-iC" onClick={closeShow}>
+                                                <NavLink to={_.url} className={"exclu_li"}>
+                                                    <img src={_.icon} alt="" className="cino_exlu" />
+                                                    {_.title}
+                                                </NavLink>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
                             </div>
                         }
 
