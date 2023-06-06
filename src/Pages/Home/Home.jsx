@@ -155,12 +155,12 @@ const Home = () => {
 
     const responsiveOptions = [
         {
-            breakpoint: '1280px',
+            breakpoint: '1440px',
             numVisible: 4,
             numScroll: 1
         },
         {
-            breakpoint: '1199px',
+            breakpoint: '1280px',
             numVisible: 3,
             numScroll: 1
         },
