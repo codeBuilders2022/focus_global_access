@@ -39,7 +39,6 @@ import Journal from "../../components/organisms/Journal/Journal"
 
 const Home = () => {
     const fields = [
-        { title: "Educational sciences", image: educacion },
         { title: "Life Sciences", image: virus },
         { title: "Health Sciences", image: img4 },
         { title: "Exacts Sciences", image: fisica },
@@ -240,7 +239,7 @@ const Home = () => {
                 <div className="lenguage">
                     <div className="options">
                         <RadioButton inputId="lenguage1" name="lenguage" value="Spanish" onChange={(e) => setLenguage(e.value)} checked={lenguage === 'Spanish'} />
-                        <label htmlFor="lenguage1" className="ml-2">Spanish publications</label>
+                        <label htmlFor="lenguage1" className="ml-2">Include spanish publications</label>
                     </div>
                     <div className="options">
                         <RadioButton inputId="lenguage2" name="lenguage" value="English" onChange={(e) => setLenguage(e.value)} checked={lenguage === 'English'} />
@@ -257,7 +256,7 @@ const Home = () => {
                                 )
                             }) : dataApi.map((e, index) => {
                                 return (
-                                    e.lenguage == 'Spanish' &&
+
                                     <Journal key={index} index={index} journal={e} />
                                 )
                             })}
