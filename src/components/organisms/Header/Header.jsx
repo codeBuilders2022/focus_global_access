@@ -5,6 +5,9 @@ import "./Header.scss"
 import logo from "../../../assets/Logos/logo_white.png"
 import logoBlack from "../../../assets/Logos/logo_black.png"
 
+import Menu from '../../../assets/images/menu.png'
+import ArrowDown from '../../../assets/images/left-arrow.png'
+
 import home from "../../../assets/images/home.png"
 import catalogs from "../../../assets/images/catalogs.png"
 import search from "../../../assets/images/search.png"
@@ -19,13 +22,16 @@ import Sun from '../../../assets/images/sol.png'
 import { useNavigate, Link, NavLink } from "react-router-dom"
 import { useStateContext } from '../../../context/ContextProvider'
 import { useEffect, useState } from "react"
+import Sidebar from "../../molecules/Sidebar/Sidebar"
 
 
 
 const Header = () => {
     const navigate = useNavigate()
-    const { handleTheme, theme } = useStateContext()
+    
+    const { handleTheme, theme, openSidebar, setOpenSidebar } = useStateContext()
     const [myTheme, setMyTheme] = useState("")
+    const [showCategories, setShowCategories] = useState(false)
     const navBar = [
         { title: "Home", icon: home, url: "/" },
         { title: "Search", icon: search, url: "search" },
@@ -35,14 +41,34 @@ const Header = () => {
         { title: "About FOCUS G.A", icon: info, },
     ]
 
+
     useEffect(() => {
         const themes = localStorage.getItem("theme")
         setMyTheme(themes)
     }, [theme])
 
-    console.log(theme)
+    const filterOptions = navBar.filter(
+      (elem) =>
+        elem.title !== "Events" &&
+        elem.title !== "Publish" &&
+        elem.title !== "About FOCUS G.A"
+    );
 
-    console.log(myTheme, "my theme")
+    const excludeOptions = navBar.filter(
+        (exclude) =>
+          exclude.title === "Events" ||
+          exclude.title === "Publish" ||
+          exclude.title === "About FOCUS G.A"
+      );
+
+    const handleClickOp = () => {
+        setShowCategories(!showCategories)
+    }
+
+    const closeShow = () => {
+        setShowCategories(false)
+    }
+
 
     return (
         <header className='Header'>
@@ -53,24 +79,60 @@ const Header = () => {
                     ):(
                         <img className="logoImg" src={logo} onClick={() => navigate('/')} style={{ cursor: 'pointer' }} />
                     )}
-                    {/* <h1 className="title"><span></span>Focus</h1> */}
                 </div>
                 <nav className="navHeader">
                     {navBar.map((element, index) => {
                         return (
-                            <section className="optionsNav" key={index}>
+                            <li className="optionsNav" key={index}>
                                 <NavLink to={element.url} className={"navlink_k"}>
                                     <img className="icon_" src={element.icon} />
                                     {element.title}
                                 </NavLink>
-                            </section>
+                            </li>
                         )
                     })}
                 </nav>
+                <nav className="navHeader-two">
+                    {filterOptions.map((element, index) => {
+                        return (
+                            <li className="optionsNav" key={index}>
+                                <NavLink to={element.url} className={"navlink_k"}>
+                                    <img className="icon_" src={element.icon} />
+                                    {element.title}
+                                </NavLink>
+                            </li>
+                        )
+                    })}
+                    <div className="cnt_list">
+                        <li className="clas_categories" onClick={() => handleClickOp()}>Categories</li>
+                        <img src={ArrowDown} alt="" className={`arrow-down ${showCategories && "roatte-e"}`} onClick={() => handleClickOp()}/>
+
+                        {showCategories &&
+                            <div className="cnt_excludeOp">
+                                <ul className="cnt_ul">
+                                    {excludeOptions.map((_, idx) => (
+                                        <li key={idx} className="l-iC" onClick={closeShow}>
+                                            <NavLink to={_.url} className={"exclu_li"}>
+                                                <img src={_.icon} alt="" className="cino_exlu" />
+                                                {_.title}
+                                            </NavLink>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        }
+
+
+                    </div>
+                </nav>
+               
             </div>
             <section className="user_t">
-                <button onClick={() => navigate('/register')}>Create account</button>
-                <button onClick={() => navigate('/login')}>Sign in</button>
+                <div className="ntc_nav">
+                    <NavLink to={"/register"} className={"user_new-r"}>Create account</NavLink>
+                    <NavLink to={"/login"} className={"user_new-r"}>Sign in</NavLink>
+                </div>
+                {/* Este es el boton del cambio de tema */}
                 <div className={`swith_`} onClick={handleTheme}>
                     {myTheme === "light" ? (
                         <img src={Moon} alt="" className="darkl" />
@@ -78,7 +140,14 @@ const Header = () => {
                         <img src={Sun} alt="" className="img_icon" />
                     )}
                 </div>
+                <div className="cnt_menu" onClick={() => setOpenSidebar(true)}>
+                    <img src={Menu} alt="" className="clMenu_u" />
+                </div>
             </section>
+
+            {openSidebar &&
+                <Sidebar datas={navBar}/>
+            }
         </header>
     )
 }
