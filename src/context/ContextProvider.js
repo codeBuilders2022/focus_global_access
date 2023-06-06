@@ -5,14 +5,12 @@ const StateContext = createContext();
 export const ContextProvider = ({ children }) => {
   const [currentMode, setCurrentMode] = useState("light");
   const [theme, setTheme] = useState(false);
+  const [openSidebar, setOpenSidebar] = useState(false)
   
   const handleTheme = () => {
     document.body.classList.toggle("dark");
-    // setTheme(!theme)
-    console.log("en la funcion")
     
     if(document.body.classList.contains("dark")){
-      console.log("entre al if del true")
       localStorage.setItem("theme", "dark")
       setTheme(true)
     }
@@ -32,7 +30,9 @@ export const ContextProvider = ({ children }) => {
        currentMode,
        setCurrentMode,
        theme,
-       setTheme
+       setTheme,
+       openSidebar,
+       setOpenSidebar
       }}
     >
       {children}

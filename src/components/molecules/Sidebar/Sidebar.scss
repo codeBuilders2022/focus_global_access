@@ -1,0 +1,96 @@
+$dark: #111b21;
+$white: #fff;
+$black: #000;
+$LogoColor: #3e6d91;
+
+.Asidme_{
+    width: 300px;
+    background: #fff;
+    height: 100vh;
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    right: -300px;
+    padding: 50px 20px 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.2s all;
+    
+    body.dark &{
+        background: $dark;
+    }
+
+
+    &.viewSidebar_{
+        right: 0;
+    }
+
+    .section_navlink-l{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        .clas__link{
+            font-size: 15px;
+            color: #000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+    
+            body.dark &{
+                color: $white;
+            }
+    
+            .navImg {
+                width: 25px;
+                height: 25px;
+                filter: invert(100%) sepia(97%) saturate(2%) hue-rotate(82deg) brightness(104%) contrast(100%);   
+            
+                body.dark &{
+                    filter: invert(0%) sepia(6%) saturate(23%) hue-rotate(233deg) brightness(95%) contrast(105%);
+                }                
+            }
+        }
+    }
+
+    .section_btns{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .clasBtn_{
+            outline: none;
+            border: none;
+            background: $LogoColor;
+            height: 48px;
+            width: 100%;
+            color: $white;
+
+            body.dark &{
+                background: unset;
+                border: 2px solid $LogoColor;
+            }
+
+        }
+    }
+
+    
+
+    .btn_closer_{
+        color: $black;
+        font-weight: bold;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        border: none;
+        outline: none;
+        background: transparent;
+
+        body.dark &{
+            color: #fff;
+        }
+    }
+}    
+
+
